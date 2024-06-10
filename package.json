@@ -1,0 +1,15 @@
+{
+  "name": "quiz-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "generate-data": "node generate-quiz-data.js"
+  },
+  "dependencies": {
+    "node-fetch": "^3.0.0"
+  },
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,126 @@
+/* Global Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1e1e1e;
+    color: #ffffff;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.light-mode {
+    background-color: #f4f4f4;
+    color: #333333;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #2e2e2e;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    transition: background-color 0.3s;
+}
+
+.light-mode .container {
+    background-color: #ffffff;
+}
+
+h1 {
+    text-align: center;
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+#quiz-list, #summary-container, #highscores-list {
+    margin-top: 20px;
+}
+
+button, .btn {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin: 20px 0;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s;
+    text-align: center;
+    text-decoration: none;
+}
+
+button:hover, .btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+#progress, #timer {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 18px;
+}
+
+#timer {
+    color: #ff0000;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    margin: 0;
+}
+
+.correct {
+    color: green;
+}
+
+.incorrect {
+    color: red;
+}
+
+.option-button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.option-button:hover {
+    background-color: #555;
+    transform: translateY(-2px);
+}
+
+.option-button.correct {
+    background-color: green;
+}
+
+.option-button.incorrect {
+    background-color: red;
+}
+
+.quiz-item {
+    background-color: #444;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    transition: transform 0.3s;
+}
+
+.quiz-item:hover {
+    transform: translateY(-5px);
+}

@@ -232,3 +232,15 @@ select {
 .light-mode .btn:hover {
   background-color: #0056b3;
 }
+
+footer {
+  margin-top: 50px;
+  text-align: center;
+  color: #bbb;
+}
+
+footer p {
+  margin: 0;
+  padding: 10px;
+  font-size: 0.9em;
+}

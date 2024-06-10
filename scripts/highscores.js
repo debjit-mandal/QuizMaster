@@ -9,10 +9,4 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
         highscoresList.appendChild(scoreItem);
     });
-
-    const theme = localStorage.getItem('theme');
-    if (theme === 'light') {
-        document.body.classList.remove('dark-mode');
-        document.body.classList.add('light-mode');
-    }
 });

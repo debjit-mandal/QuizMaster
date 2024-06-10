@@ -20,12 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     saveHighScore(score, time);
-
-    const theme = localStorage.getItem('theme');
-    if (theme === 'light') {
-        document.body.classList.remove('dark-mode');
-        document.body.classList.add('light-mode');
-    }
 });
 
 function saveHighScore(score, time) {

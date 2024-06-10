@@ -17,12 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
             displayQuestion(quizData.questions[currentQuestionIndex]);
             startTimer();
         });
-
-    const theme = localStorage.getItem('theme');
-    if (theme === 'light') {
-        document.body.classList.remove('dark-mode');
-        document.body.classList.add('light-mode');
-    }
 });
 
 function displayQuestion(question) {

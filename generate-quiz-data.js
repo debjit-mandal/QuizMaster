@@ -1,7 +1,6 @@
 import fetch from 'node-fetch';
 import fs from 'fs';
 
-// Category mappings based on Open Trivia Database category IDs
 const categories = [
     { id: 9, name: "General Knowledge" },
     { id: 17, name: "Science & Nature" },
@@ -27,13 +26,13 @@ const categories = [
 
 const fetchQuizData = async (categoryId, retryCount = 0) => {
     const url = `https://opentdb.com/api.php?amount=50&category=${categoryId}&type=multiple`;
-    const maxRetries = 5; // Maximum number of retries
+    const maxRetries = 5;
 
     try {
         const response = await fetch(url);
         if (!response.ok) {
             if (response.status === 429 && retryCount < maxRetries) {
-                const delay = Math.pow(2, retryCount) * 10000; // Exponential backoff, starting with 10 seconds
+                const delay = Math.pow(2, retryCount) * 10000;
                 console.log(`Rate limit hit. Retrying in ${delay / 1000} seconds...`);
                 await new Promise(resolve => setTimeout(resolve, delay));
                 return fetchQuizData(categoryId, retryCount + 1);
@@ -48,12 +47,12 @@ const fetchQuizData = async (categoryId, retryCount = 0) => {
         return data.results;
     } catch (error) {
         console.error('Error fetching quiz data:', error);
-        return null; // Return null to explicitly indicate failure
+        return null;
     }
 };
 
 const generateQuizData = async () => {
-    const delayBetweenRequests = 10000; // 10 seconds delay between requests
+    const delayBetweenRequests = 10000;
     let quizzes = [];
 
     for (const category of categories) {
@@ -72,7 +71,7 @@ const generateQuizData = async () => {
         };
         quizzes.push(quiz);
         console.log(`Quiz for category "${category.name}" fetched successfully.`);
-        await new Promise(resolve => setTimeout(resolve, delayBetweenRequests)); // Add delay before the next request
+        await new Promise(resolve => setTimeout(resolve, delayBetweenRequests));
     }
 
     if (quizzes.length === 0) {

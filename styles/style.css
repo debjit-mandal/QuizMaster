@@ -1,3 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: "Poppins", sans-serif;
   margin: 0;
@@ -5,6 +11,21 @@ body {
   background: linear-gradient(135deg, #1e1e1e 0%, #333333 100%);
   color: #ffffff;
   transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+  background: linear-gradient(135deg, #1e1e1e 0%, #333333 100%);
+  color: #ffffff;
+}
+
+body.light-mode {
+  background: linear-gradient(135deg, #ffffff 0%, #eeeeee 100%);
+  color: #333333;
+}
+
+body.dark-mode h1,
+body.light-mode h1 {
+  color: #ffcc00;
 }
 
 .container {
@@ -18,28 +39,52 @@ body {
   text-align: center;
 }
 
-.theme-toggle {
-  position: fixed;
-  top: 20px;
-  right: 20px;
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.checkbox {
+  opacity: 0;
+  position: absolute;
+}
+
+.checkbox-label {
+  background-color: #111;
+  width: 50px;
+  height: 26px;
+  border-radius: 50px;
+  position: relative;
+  padding: 5px;
   cursor: pointer;
-  font-size: 1.5em;
-  color: #ffcc00;
-  transition: color 0.3s;
-  z-index: 1000;
-  width:20px;
-  height:20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.theme-toggle:hover {
-  color: #ffffff;
+.fa-moon {
+  color: #f1c40f;
 }
 
-h1 {
-  font-size: 3em;
-  margin-bottom: 20px;
-  color: #ffcc00;
-  text-transform: uppercase;
+.fa-sun {
+  color: #f39c12;
+}
+
+.checkbox-label .ball {
+  background-color: #fff;
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  border-radius: 50%;
+  transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .checkbox-label .ball {
+  transform: translateX(24px);
 }
 
 #quiz-list,
@@ -78,10 +123,6 @@ button:hover,
 
 .timer {
   color: #ff0000;
-}
-
-header {
-  margin-bottom: 40px;
 }
 
 .correct {
@@ -147,17 +188,8 @@ select {
   margin-top: 10px;
 }
 
-.light-mode {
-  background: linear-gradient(135deg, #ffffff 0%, #eeeeee 100%);
-  color: #333333;
-}
-
 .light-mode .container {
   background: rgba(0, 0, 0, 0.1);
-}
-
-.light-mode .theme-toggle {
-  color: #333333;
 }
 
 .light-mode h1 {

@@ -17,12 +17,17 @@
     ></script>
   </head>
   <body class="dark-mode">
-    <div class="theme-toggle" id="theme-toggle">
-      <i class="fas fa-moon"></i>
-    </div>
     <div class="container">
       <header>
         <h1>QuizMaster</h1>
+        <div>
+          <input type="checkbox" class="checkbox" id="checkbox" />
+          <label for="checkbox" class="checkbox-label">
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun"></i>
+            <span class="ball"></span>
+          </label>
+        </div>
       </header>
       <div id="quiz-list" class="quiz-list"></div>
     </div>
